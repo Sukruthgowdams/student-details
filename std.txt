@@ -1,0 +1,19 @@
+file1 =open(r"C:\Users\RU-CIT-311-002\Desktop\std2.txt",'a+')
+flag = input("Do you wish to update a file!? y/n \n")
+if flag == 'y':
+    n = int(input("Enter how many students \n"))
+    for i in range(n):
+        srn,name,sem,sec,avgmarks= input("Enter the details in order: \n").split()
+        file1.writelines(srn+" "+ name+" "+ sem+" "+ sec+" "+ avgmarks+"\n")
+file1.close()
+print("Details of students are: \n")
+mylines=[]
+file1=open(r"C:\Users\RU-CIT-311-002\Desktop\std2.txt","r")
+for i in file1:
+    mylines.append(i.split())
+for element in mylines:
+    avgmarks= int(element[-1])
+    sec=str(element[-2])
+    sem=str(element[-3])
+    print(element)
+file1.close()
